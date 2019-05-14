@@ -6,6 +6,8 @@ import {
   List,
   ListItem,
   Text,
+  SwipeRow, 
+  View,
   Icon,
   Left,
   Body,
@@ -60,6 +62,30 @@ export default () => {
             <Icon active name="arrow-forward" />
           </Right>
         </ListItem>
+        <Container>
+        <Header />
+        <Content scrollEnabled={false}>
+          <SwipeRow
+            leftOpenValue={75}
+            rightOpenValue={-75}
+            left={
+              <Button success onPress={() => alert('Add')}>
+                <Icon active name="add" />
+              </Button>
+            }
+            body={
+              <View>
+                <Text>SwipeRow Body Text</Text>
+              </View>
+            }
+            right={
+              <Button danger onPress={() => alert('Trash')}>
+                <Icon active name="trash" />
+              </Button>
+            }
+          />
+        </Content>
+      </Container>
       </Content>
     </Container>
   );
